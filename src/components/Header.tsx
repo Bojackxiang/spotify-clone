@@ -27,7 +27,7 @@ const Header: React.FC<HeaderProps> = ({ children, className }) => {
     >
       <div className="w-full mb-4 flex items-center justify-between">
         {/*  desktop:  left side button group*/}
-        {/*  md above display, otherwise hide*/}
+        {/* desktop: hidden; below mid flex */}
         <div className="hidden md:flex gap-x-2 items-center">
           <button className="rounded-full bg-black flex items-center justify-center hover:opacity-75 transition">
             <RxCaretLeft size={35} />
@@ -38,7 +38,7 @@ const Header: React.FC<HeaderProps> = ({ children, className }) => {
         </div>
 
         {/* mobile:  left side button group*/}
-        {/* md: below display otherwise hidden */}
+        {/* deskttop: flex; below mid: hidden */}
         <div className="flex md:hidden gap-x-2 items-center">
           <button className="rounded-full p-2 bg-white flex items-center justify-center hover:opacity-75 transition">
             <HiHome className="text-black" size={20} />
