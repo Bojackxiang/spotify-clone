@@ -1,10 +1,17 @@
 "use client";
 
+import AuthModal from "@/components/AuthModal";
 import Modal from "@/components/Modal";
+import {
+  useSessionContext,
+  useSupabaseClient,
+} from "@supabase/auth-helpers-react";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const ModalProvider = () => {
   const [isMounted, setIsMounted] = useState(false);
+
 
   useEffect(() => {
     setIsMounted(true);
@@ -16,7 +23,7 @@ const ModalProvider = () => {
 
   return (
     <>
-      <Modal title="title" description="description" isOpen onChange={() => {}}>test</Modal>
+      <AuthModal>hello</AuthModal>
     </>
   );
 };

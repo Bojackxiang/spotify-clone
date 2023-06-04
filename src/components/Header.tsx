@@ -1,12 +1,14 @@
 'use client';
 
-import React from "react";
+import React, { useEffect } from "react";
 import { twMerge } from "tailwind-merge";
 import { useRouter } from "next/navigation";
 import { RxCaretLeft, RxCaretRight } from "react-icons/rx";
 import { HiHome } from "react-icons/hi";
 import { BiSearch } from "react-icons/bi";
 import Button from "./Button";
+import useAuthModal from "@/hooks/useAuthModal";
+import { useSessionContext } from "@supabase/auth-helpers-react";
 
 interface HeaderProps {
   children: React.ReactNode;
@@ -14,9 +16,14 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ children, className }) => {
-  // const router = useRouter();
+  const router = useRouter();
+  const authModal = useAuthModal()
+  const {session} = useSessionContext();
 
   const handleLogout = () => {};
+
+  
+
 
   return (
     <div
@@ -52,10 +59,10 @@ const Header: React.FC<HeaderProps> = ({ children, className }) => {
         <div className="flex justify-between items-center gap-x-4">
           <>
           <div>
-            <Button className="bg-transparent text-neutral-300 font-medium" onClick={() => {}}>Sign up</Button>
+            <Button className="bg-transparent text-neutral-300 font-medium" onClick={authModal.onOpen}>Sign up</Button>
           </div>
           <div>
-            <Button className="bg-transparent bg-white text-neutral-800 font-medium" onClick={() => {}}>Log in</Button>
+            <Button className="bg-transparent bg-white text-neutral-800 font-medium" onClick={authModal.onOpen}>Log in</Button>
           </div>
           </>
         </div>
