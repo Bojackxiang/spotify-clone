@@ -30,10 +30,10 @@ const AuthModal: React.FC<AuthModalProps> = ({ children }) => {
 
   useEffect(() => {
     if (session) {
-      router.refresh();
       authModal.onClose();
+      router.refresh();
     }
-  }, []);
+  }, [session]);
 
   return (
     <Modal
