@@ -12,10 +12,10 @@ import { Auth } from "@supabase/auth-ui-react";
 import useAuthModal from "@/hooks/useAuthModal";
 
 interface AuthModalProps {
-  children: React.ReactNode;
+
 }
 
-const AuthModal: React.FC<AuthModalProps> = ({ children }) => {
+const AuthModal: React.FC<AuthModalProps> = () => {
   const supabaseClient = useSupabaseClient();
   const router = useRouter();
   const { session } = useSessionContext();

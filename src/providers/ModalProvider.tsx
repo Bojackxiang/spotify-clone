@@ -2,6 +2,7 @@
 
 import AuthModal from "@/components/AuthModal";
 import Modal from "@/components/Modal";
+import UploadModal from "@/components/UploadModal";
 import {
   useSessionContext,
   useSupabaseClient,
@@ -23,7 +24,8 @@ const ModalProvider = () => {
 
   return (
     <>
-      <AuthModal>hello</AuthModal>
+      <AuthModal/>
+      <UploadModal/>
     </>
   );
 };
