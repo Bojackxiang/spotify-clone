@@ -25,7 +25,9 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  // const songs = await getSongsByUserId();
+  const songs = await getSongsByUserId();
+
+
   return (
     <html lang="en">
       <body className={font.className}>
@@ -33,7 +35,7 @@ export default async function RootLayout({
           <UserProvider>
             <ModalProvider/>
             <ToasterProvider/>
-            <SideBar songs={[]}>{children}</SideBar>
+            <SideBar songs={songs}>{children}</SideBar>
           </UserProvider>
         </SupabaseProvider>
       </body>

@@ -12,7 +12,7 @@ import { Song } from "@/types";
 
 interface SideBarProps {
   children: React.ReactNode;
-  songs: Song[]
+  songs: Song[];
 }
 
 const SideBar: React.FC<SideBarProps> = ({ children, songs }) => {
@@ -51,7 +51,7 @@ const SideBar: React.FC<SideBarProps> = ({ children, songs }) => {
         </Box>
 
         <Box className="overflow-y-auto h-full">
-          <Library songs={songs}/>
+          <Library songs={songs} />
           Song library
         </Box>
       </div>
